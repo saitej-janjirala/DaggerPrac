@@ -1,6 +1,7 @@
 package com.example.daggerinjavaprac.di.modules;
 
 import android.app.Activity;
+import android.content.Context;
 
 
 import com.example.daggerinjavaprac.MainViewModel;
@@ -17,9 +18,14 @@ public class ActivityModule {
     public ActivityModule(Activity activity){
         this.activity=activity;
     }
-    @ActivityScope
+//    @ActivityScope
+//    @Provides
+//    MainViewModel providesMainViewModel(DatabaseService databaseService,NetworkService networkService){
+//      return new MainViewModel(databaseService,networkService);
+//    }
+    //removed after injecting mainviewmodel constructor
     @Provides
-    MainViewModel providesMainViewModel(DatabaseService databaseService,NetworkService networkService){
-      return new MainViewModel(databaseService,networkService);
+    Context providesContext(){
+        return activity;
     }
 }

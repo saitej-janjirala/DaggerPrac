@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 .applicationComponent(((MyApplication)getApplication()).component)
                 .build()
                 .inject(this);
-        Log.i("MainActivity",mainViewModel.toString());
+        Log.i("ApplicationMainActivity",mainViewModel.databaseService.toString());
+        Log.i("ApplicationMainActivity",mainViewModel.networkService.toString());
     }
 }
